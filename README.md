@@ -10,3 +10,6 @@ School management System
 
 # How to do local Setup
 
+Hemant has done the setup
+
+
