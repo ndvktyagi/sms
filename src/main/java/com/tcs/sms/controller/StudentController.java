@@ -5,6 +5,8 @@ import com.tcs.sms.service.StudentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/student")
 public class StudentController {
@@ -13,15 +15,20 @@ public class StudentController {
     StudentService studentService;
 
     @GetMapping()
-    public String studentDetails() {
-        return "Student details found successfully";
+    public List<StudentDto> studentDetails() {
+        return studentService.getAllStudentDetails();
     }
 
-    @PostMapping("/create-student")
+    @PostMapping()
     public String studentRegistration(@RequestBody StudentDto studentDto) {
         System.out.println("StudentDto=" + studentDto);
         String result = studentService.studentRegistration(studentDto);
         return result;
+    }
+
+    @PutMapping()
+    public String StudentUpdate(@RequestBody StudentDto studentDto){
+        return studentService.updateStudentDetails(studentDto);
     }
 
 }
