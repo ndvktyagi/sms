@@ -31,4 +31,9 @@ public class StudentController {
         return studentService.updateStudentDetails(studentDto);
     }
 
+    @DeleteMapping()
+    public String deleteStudent(@RequestParam int studentId){
+        return  studentService.deleteStudent(studentId);
+    }
+
 }

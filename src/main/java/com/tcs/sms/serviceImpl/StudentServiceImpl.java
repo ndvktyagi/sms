@@ -88,5 +88,11 @@ public class StudentServiceImpl implements StudentService {
 
     }
 
+    @Override
+    public String deleteStudent(int studentId){
+        studentRepository.deleteById(studentId);
+        return "Student has been deleted successfully";
+    }
+
 
 }

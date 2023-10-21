@@ -8,4 +8,5 @@ public interface StudentService {
     String studentRegistration(StudentDto studentDto);
     List<StudentDto> getAllStudentDetails();
     String updateStudentDetails(StudentDto studentDto);
+    String deleteStudent(int studentId);
 }
